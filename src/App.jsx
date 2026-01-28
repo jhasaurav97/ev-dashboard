@@ -34,16 +34,12 @@ function App() {
     return <p>Loading EV data...</p>;
   }
 
-  // console.log(groupByModelYear(data).slice(0, 5));
-  // console.log(groupByMake(data));
-  // console.log(groupByEVType(data));
-
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>EV Population Analytics Dashboard</h1>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <h1 className="text-3xl font-semibold text-gray-800">EV Population Analytics Dashboard</h1>
 
       {/* Stat Cards Section */}
-      <div style={{ display: "flex", gap: "16px", margin: "20px 0" }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
         <StatCard title="Total EV Records" value={totalRecords} />
         <StatCard title="Manufacturers" value={totalManufacturers} />
         <StatCard title="Latest Model Year" value={latestModelYear} />

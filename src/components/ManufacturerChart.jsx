@@ -9,14 +9,17 @@ import {
 
 const ManufacturerChart = ({ data }) => {
   return (
-    <div style={{ marginTop: "40px" }}>
-      <h2>Top EV Manufacturers</h2>
+    <div className="bg-white rounded-xl shadow-sm border p-5 mt-6">
+      <h2 className="text-lg font-semibold text-gray-800 mb-4">Top EV Manufacturers</h2>
       <ResponsiveContainer width="100%" height={350}>
         <BarChart data={data}>
-          <XAxis dataKey="make" />
+          <XAxis dataKey="make"
+            tick={{ fontSize: 12 }}
+            interval={0}
+          />
           <YAxis />
           <Tooltip />
-          <Bar dataKey="count" />
+          <Bar dataKey="count" className="fill-blue-600" />
         </BarChart>
       </ResponsiveContainer>
     </div>
