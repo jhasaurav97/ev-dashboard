@@ -7,11 +7,13 @@ import {
 } from "./utils/dataProcessor.js";
 import YearTrendChart from "./components/YearTrendChart.jsx"; 
 import ManufacturerChart from "./components/ManufacturerChart.jsx";
+import EVTypeChart from "./components/EVTypeChart.jsx";
 
 function App() {
   const [data, setData] = useState([]);
   const YearTrendData = groupByModelYear(data);
   const manufacturerData = groupByMake(data);
+  const evTypeData = groupByEVType(data);
 
   useEffect(() => {
     loadCSVData(setData);
@@ -23,7 +25,7 @@ function App() {
 
   // console.log(groupByModelYear(data).slice(0, 5));
   // console.log(groupByMake(data));
-  console.log(groupByEVType(data));
+  // console.log(groupByEVType(data));
 
   return (
     <div style={{ padding: "20px" }}>
@@ -31,6 +33,7 @@ function App() {
       <p>Total Records: ${data.length}</p>
       <YearTrendChart data={YearTrendData} />
       <ManufacturerChart data={manufacturerData} />
+      <EVTypeChart data={evTypeData} />
     </div>
   );
 }
