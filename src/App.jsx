@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 import { loadCSVData } from "./utils/dataLoader.js";
+import {
+  groupByModelYear,
+  groupByMake,
+  groupByEVType
+} from "./utils/dataProcessor.js"; 
 
 function App() {
   const [data, setData] = useState([]);
@@ -11,6 +16,10 @@ function App() {
   if (!data.length) {
     return <p>Loading EV data...</p>;
   }
+
+  console.log(groupByModelYear(data).slice(0, 5));
+  console.log(groupByMake(data));
+  console.log(groupByEVType(data));
 
   return (
     <div style={{ padding: "20px" }}>
