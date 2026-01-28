@@ -1,5 +1,5 @@
 ## Live Dashboard
-https://your-deployed-url-here
+https://ev-dashboard-mu-ten.vercel.app
 
 ## Tech Stack
 - React (Vite)
